@@ -1,0 +1,9 @@
+[project]
+name = "structured-doc-parsers"
+version = "0.1.0"
+description = "Per-source HTML parsers that turn public documents into clean, structured JSON."
+requires-python = ">=3.10"
+dependencies = ["beautifulsoup4>=4.12"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
