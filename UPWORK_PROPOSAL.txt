@@ -1,0 +1,42 @@
+======================================================================
+COVER LETTER
+======================================================================
+
+Hi Stepan,
+
+Instead of writing a long pitch, I just went ahead and built a complete, scalable parsing framework based on your job description and example attachments.
+
+You only provided the source URL and the preview HTML. Based on that, I built:
+1. A parser registry and base architecture (`core/registry.py`, `core/base.py`)
+2. A strict data schema & automated validator (`core/schema.py`, `core/validator.py`)
+3. A command-line interface to batch process pages (`cli.py`)
+4. The actual parser for your example source (`parsers/irishstatutebook.py`)
+
+I didn't just run the example act. I downloaded 4 additional acts of varying sizes from `irishstatutebook.ie` (including the Data Protection Act 2018 with 233 articles) and parsed them all perfectly. They all pass the strict JSON schema validation.
+
+I also wrote a script to dynamically render my parsed JSON back into your exact preview UI. Please see the attached `data_protection_act_2018_preview.html`.
+
+You can review my entire codebase and framework design here:
+[在此处放你的 GitHub 仓库公开链接]
+
+I am a full-time independent developer working ~16 hours a day, so CET overlap is guaranteed. I'm perfectly fine with the $25/parser rate. I built this framework because I want to handle the volume of 200+ parsers efficiently.
+
+Send me the screening task and I'll drop the PR within hours.
+
+======================================================================
+SCREENING QUESTIONS
+======================================================================
+
+Q1: This role is fixed-price at $25 per parser, with a paid screening task as step one. In one or two sentences, confirm you're good with that and tell us your HTML parsing experience.
+---
+Yes, I fully confirm the $25/parser fixed-price and am ready for the screening task. My HTML parsing experience goes beyond basic scripting; as demonstrated by the framework I built for this bid, I specialize in designing scalable architectures to extract, normalize, and strictly validate JSON from unstructured HTML DOMs and SSR payloads.
+
+Q2: Describe your recent experience with similar projects
+---
+I frequently build production-grade parsing pipelines to extract public government and regulatory documents. My focus isn't just writing BeautifulSoup selectors—it's building robust schema validation to ensure nested structures (Parts -> Sections -> Articles) and hidden metadata are perfectly formatted. I just built a full framework specifically for your workflow, which you can see in my GitHub repo.
+
+Q3: What tools do you use for data mining and visualization?
+---
+For Extraction & Architecture: Python, BeautifulSoup4, pytest, and Git. 
+For DOM Inspection: Browser DevTools to locate stable attributes and CSS anchors.
+Note: I do not use visualization tools for these pipelines, as my primary focus is delivering extremely clean, machine-readable backend JSON data that passes automated CI validators.
