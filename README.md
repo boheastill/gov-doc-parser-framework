@@ -52,3 +52,7 @@ python generate_preview.py output/data_protection_act.json -o preview.html
 - Python 3.x
 - BeautifulSoup4
 - Pytest (for structural CI tests)
+
+---
+
+*Built by [Bohea Still](https://boheastill.com/?utm_source=github&utm_campaign=gov-doc-parser) — independent developer taking on automation, AI-pipeline and hardware↔software integration projects. [Case studies →](https://boheastill.com/?utm_source=github&utm_campaign=gov-doc-parser)*
