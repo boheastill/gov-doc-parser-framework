@@ -1,5 +1,7 @@
 # Regulatory HTML Parser Framework
 
+[![CI](https://github.com/boheastill/gov-doc-parser-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/boheastill/gov-doc-parser-framework/actions/workflows/ci.yml)
+
 A robust, offline-first Python framework for parsing unstructured regulatory and government HTML documents into strictly validated JSON schemas. 
 
 Built specifically to handle high-volume document extraction pipelines with complex nested hierarchies, obfuscated DOMs, and inconsistent legacy HTML structures.
