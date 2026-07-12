@@ -2,3 +2,6 @@
 __pycache__/
 .pytest_cache/
 *.json
+UPWORK_PROPOSAL*
+*_PROPOSAL.txt
+COVER_LETTER*
