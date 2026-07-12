@@ -16,6 +16,35 @@ Built specifically to handle high-volume document extraction pipelines with comp
 
 ## 🏗️ Architecture
 
+```mermaid
+flowchart LR
+    H["Downloaded HTML snapshot<br/>offline, reproducible"] --> R["Parser registry<br/>@register decorator picks the right parser"]
+    R --> P["Site parser<br/>anchor-based tree building"]
+    P --> T["Nested document tree<br/>Parts → Sections → Articles"]
+    T --> V{"Strict schema<br/>validator"}
+    V -->|0 warnings| J["Validated JSON"]
+    V -->|violations| X["Fail loudly<br/>before the pipeline"]
+    J --> U["HTML preview<br/>client-ready rendering"]
+```
+
+From raw statute to validated JSON:
+
+```mermaid
+sequenceDiagram
+    participant CLI as cli.py
+    participant Reg as Registry
+    participant Par as Parser
+    participant Val as Validator
+    CLI->>Reg: resolve parser for source URL
+    Reg-->>CLI: irishstatutebook parser
+    CLI->>Par: parse HTML snapshot
+    Par-->>CLI: Document tree, 8 sections, 233 articles
+    CLI->>Val: validate structure
+    Val-->>CLI: 0 warnings
+    CLI->>CLI: write JSON + optional preview
+```
+
+
 - `core/schema.py`: Defines the strict `Document`, `Section`, and `Article` data classes and slug generation.
 - `core/registry.py`: Global parser registry mapping URLs to specific parser implementations.
 - `core/validator.py`: Automated CI validation rules.
