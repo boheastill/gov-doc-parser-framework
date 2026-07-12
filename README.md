@@ -33,12 +33,12 @@ From raw statute to validated JSON:
 sequenceDiagram
     participant CLI as cli.py
     participant Reg as Registry
-    participant Par as Parser
+    participant Prs as Parser
     participant Val as Validator
     CLI->>Reg: resolve parser for source URL
     Reg-->>CLI: irishstatutebook parser
-    CLI->>Par: parse HTML snapshot
-    Par-->>CLI: Document tree, 8 sections, 233 articles
+    CLI->>Prs: parse HTML snapshot
+    Prs-->>CLI: Document tree, 8 sections, 233 articles
     CLI->>Val: validate structure
     Val-->>CLI: 0 warnings
     CLI->>CLI: write JSON + optional preview
